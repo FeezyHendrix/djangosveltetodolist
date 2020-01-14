@@ -18,7 +18,15 @@
 </script>
 
 <main>
-	
+	{#if todolist}
+		<div class="row">
+			<div class="col-md-4">
+				<TodoList todolist={todolist}> </TodoList>
+			</div>
+		</div>
+	{:else} 
+		<p>Loading</p>
+	{/if }
 </main>
 
 <style>
