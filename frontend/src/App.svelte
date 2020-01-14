@@ -1,5 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
+	import TodoList from './components/todolist.svelte';
 
 
 	export let todolist;
