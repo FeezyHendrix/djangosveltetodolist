@@ -28,7 +28,7 @@ class TodoList(models.Model):
 class Todo(models.Model):
     description = models.CharField(max_length=128)
     created_at = models.DateTimeField(auto_now=True)
-    finished_at = models.DateTimeField(null=True)
+    finished_at = models.DateTimeField(null=True, blank=True)
     is_finished = models.BooleanField(default=False)
     todolist = models.ForeignKey(TodoList, related_name='todos', on_delete=models.CASCADE)
 
