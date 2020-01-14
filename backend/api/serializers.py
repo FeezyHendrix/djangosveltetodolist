@@ -9,6 +9,9 @@ class TodoListSerializer(serializers.HyperlinkedModelSerializer):
 
 
 
-class TodoSerializer(serializers.HyperlinkedModelSerializer):
+class TodoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Todo
+        fields = '__all__'
+        depth = 1
+        lookup_field = 'todolist'

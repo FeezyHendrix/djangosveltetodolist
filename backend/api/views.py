@@ -2,7 +2,7 @@ from django.shortcuts import render
 from rest_framework import viewsets
 
 from .serializers import TodoListSerializer, TodoSerializer
-from .models import TodoList
+from .models import TodoList, Todo
 
 class TodoListViewSet(viewsets.ModelViewSet):
     queryset = TodoList.objects.all()
@@ -10,5 +10,6 @@ class TodoListViewSet(viewsets.ModelViewSet):
 
 
 class TodoViewSet(viewsets.ModelViewSet):
-    queryset = TodoList.objects.all()
+    queryset = Todo.objects.all()
     serializer_class = TodoSerializer
+    lookup_field = 'todolist'
