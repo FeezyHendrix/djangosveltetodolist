@@ -6,3 +6,9 @@ class TodoListSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = TodoList
         fields = ('title', 'description')
+
+
+
+class TodoSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Todo
