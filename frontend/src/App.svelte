@@ -11,9 +11,14 @@
 	});
 
 	const fetchTodoList = async () => {
-		const response = await fetch(`${base_url}/list`);	
-		todolist = await response.json();
-		console.log(todolist);
+		try {
+			const response = await fetch(`${base_url}/list`, { headers: { "Accept": "application/json",
+        "Content-Type": "application/json" }});	
+			todolist = await response.json();
+			console.log(todolist);
+		} catch(e) {
+			console.log(e);
+		}
 	}
 </script>
 
